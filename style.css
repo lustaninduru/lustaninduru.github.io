@@ -1,0 +1,135 @@
+/* ==========================================================================
+   STYLE.CSS - GAYA GRADASI LEMBUT & RESPONSIVE
+   ========================================================================== */
+
+/* Pengaturan Dasar Halaman */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Latar Belakang Gradasi Lembut (Biru Muda Pastel ke Pink Pastel) */
+    background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 100%);
+    background-attachment: fixed;
+    color: #334155;
+}
+
+/* Animasi Mengetik */
+.typing-text {
+    color: #0284c7;
+    font-weight: 700;
+}
+
+/* Penyelarasan Warna Text Utama Hero */
+h1 span {
+    color: #0284c7;
+}
+
+/* Efek Glow Tipis Pada Lingkaran Foto */
+.avatar-glow {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Efek Glassmorphism (Transparansi Lembut) Pada Card/Box */
+.bg-white-50 {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+}
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Animasi Hover Efek Pada Card Proyek & Sertifikat */
+.project-card, .cert-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover, .cert-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.1) !important;
+}
+
+/* Efek Interaktif Transisi Link Social Media */
+.social-icons-group a {
+    transition: transform 0.2s ease, opacity 0.2s;
+}
+.social-icons-group a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   SISTEM POP-UP MODAL SERTIFIKAT (MURNI CSS)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+/* Menangkap target klik ID di url */
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-window {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 650px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-window img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 1;
+}
+.close-btn:hover {
+    color: #ef4444;
+}
+
+/* Animasi Muncul Lembut untuk Modal Pop-up */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
